@@ -1,0 +1,671 @@
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #fcfdfd;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN CON ESCUDO INTEGRADO
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-contenedor {
+    display: flex;
+    align-items: center; /* Centra verticalmente el escudo con el texto */
+    gap: 15px;          /* Espacio de separación entre el escudo y las letras */
+}
+
+/* Control exacto del Escudo para que no deforme el menú */
+.logo-insignia {
+    height: 50px;       /* Altura perfecta y elegante para la barra superior */
+    width: auto;        /* Mantiene la proporción original del escudo para que no se estire feo */
+    display: inline-block;
+    vertical-align: middle;
+    /* Efecto moderno sutil: una sombra suave detrás del escudo */
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15)); 
+}
+
+.logo-texto {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0b2512;
+}
+
+.logo-texto span {
+    color: #138a36; /* Verde Unicachi */
+}
+
+
+.logo-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-insignia {
+    height: 45px; /* Tamaño perfecto para que se alinee con el menú */
+    width: auto;
+}
+
+.logo-texto {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0b2512;
+}
+
+.logo-texto span {
+    color: #138a36; /* Verde Unicachi */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #475569;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #138a36;
+}
+
+.btn-cta-nav {
+    background-color: #138a36; /* Fondo verde institucional */
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(19, 138, 54, 0.2);
+}
+
+.btn-cta-nav:hover {
+    background-color: #0b2512;
+}
+
+/* ==========================================
+   SECCIÓN HERO CORREGIDA PARA DREAMWEAVER CS6
+   ========================================== */
+.hero {
+    position: relative; /* Contenedor base obligatorios */
+    min-height: 550px;  /* Altura fija mínima para que no colapse a 0px */
+    width: 100%;
+    display: block;     /* Forzamos comportamiento de bloque para CS6 */
+    overflow: hidden;   /* Evita desbordes de las fotos */
+    background-color: #0b2512; /* Fondo de respaldo por si tardan en cargar las fotos */
+}
+
+/* Capa del contenedor de fotos */
+.carrusel-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Las imágenes individuales del carrusel */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Ocultas por defecto */
+    display: block;
+    /* Transición clásica compatible con el motor de renderizado de CS6 */
+    -webkit-transition: opacity 1.2s ease-in-out;
+    -moz-transition: opacity 1.2s ease-in-out;
+    -o-transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* Capa de filtro oscuro para asegurar contraste de las letras */
+.carrusel-fondo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 37, 18, 0.85); /* Capa fija oscura traslúcida */
+    z-index: 2;
+}
+
+/* Clase que activa la visibilidad de la imagen */
+.slide.activa {
+    opacity: 1 !important;
+}
+
+/* Capa superior donde va tu texto y botones */
+.hero-textos {
+    position: relative;
+    z-index: 3; /* Al frente de las imágenes */
+    max-width: 650px;
+    padding: 100px 0 0 8%; /* Margen interno para empujar el texto hacia abajo */
+    color: #ffffff;
+}
+
+.tag {
+    background-color: #f4d03f; /* Amarillo de tu afiche */
+    color: #0b2512;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin: 20px 0;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #f4d03f; /* Botón Amarillo destacado */
+    color: #0b2512;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    background-color: #ffffff;
+}
+
+/* Stats Banner (Orden, Progreso, Excelencia) */
+.stats-banner {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 35px 8%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    border-bottom: 2px solid #f4d03f; /* Línea inferior amarilla */
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item strong {
+    font-size: 1.8rem;
+    color: #c0392b; /* Rojo del Escudo para resaltar */
+    display: block;
+    letter-spacing: 1px;
+}
+
+.stat-item p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Sección Pilares */
+.seccion-pilares {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.seccion-pilares h2 {
+    font-size: 2.2rem;
+    color: #0b2512;
+    font-weight: 800;
+}
+
+.subtitulo {
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+.grid-pilares {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta-pilar {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: left;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tarjeta-pilar:hover {
+    transform: translateY(-5px);
+    border-color: #138a36; /* Bordes se iluminan en verde al pasar el mouse */
+}
+
+.icono-bloque {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.tarjeta-pilar h3 {
+    margin-bottom: 12px;
+    color: #0b2512;
+    font-weight: 700;
+}
+
+.tarjeta-pilar p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Sección Admisión y Formulario Split */
+.seccion-admision {
+    background-color: #f4f7f5; /* Fondo grisáceo verdoso muy suave */
+    padding: 80px 8%;
+}
+
+.admision-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.admision-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.admision-info h2 {
+    font-size: 2.4rem;
+    color: #0b2512;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.admision-info p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+.admision-formulario {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(11,37,18,0.06);
+    border-top: 4px solid #138a36; /* Detalle superior verde */
+}
+
+.admision-formulario input, 
+.admision-formulario select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.admision-formulario input:focus,
+.admision-formulario select:focus {
+    border-color: #138a36;
+}
+
+.btn-enviar {
+    width: 100%;
+    background-color: #138a36; /* Botón de envío en verde institucional */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(19, 138, 54, 0.2);
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #0b2512;
+}
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER CON 3 COLUMNAS ADAPTATIVAS)
+   ========================================================================== */
+.pie-pagina {
+    background-color: #0b2512; /* Verde oscuro institucional */
+    color: #ffffff;
+    padding: 50px 8% 20px 8%;
+    border-top: 5px solid #f4d03f; /* Línea decorativa amarilla */
+    clear: both;
+}
+
+.footer-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Clave para el diseño responsivo */
+}
+
+/* Ajuste proporcional para las 3 columnas */
+.footer-info, 
+.footer-contacto, 
+.footer-redes {
+    flex: 1;
+    min-width: 250px; /* Evita que se aplasten en pantallas medianas */
+}
+
+.pie-pagina h3,
+.pie-pagina h4 {
+    color: #f4d03f; /* Títulos amarillos de tu afiche */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.pie-pagina h3 {
+    font-size: 1.4rem;
+}
+
+.pie-pagina h4 {
+    font-size: 1.1rem;
+}
+
+.footer-info p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Estilos para la nueva columna de datos */
+.dato-contacto {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Separa el icono del texto */
+}
+
+.emoji-icono {
+    font-size: 1.1rem; /* Tamaño proporcional para que acompañe el texto */
+    display: inline-block;
+    width: 20px; /* Espacio fijo para alineación simétrica vertical */
+    text-align: center;
+}
+
+.footer-redes {
+    text-align: right;
+}
+
+.iconos-redes {
+    display: inline-block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Ajustes de alineación para pantallas de celulares */
+@media (max-width: 768px) {
+    .footer-contenedor {
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-redes {
+        text-align: left;
+    }
+    .iconos-redes {
+        text-align: left;
+    }
+    .red-social {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+
+/* Estilo Circular de los Botones de Redes */
+.red-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+/* Efectos Visuales Personalizados al pasar el Cursor */
+.red-social:hover {
+    transform: translateY(-5px);
+}
+
+.fb:hover {
+    background-color: #1877f2; /* Azul clásico de Facebook */
+}
+
+.tt:hover {
+    background-color: #000000; /* Fondo negro de TikTok */
+    color: #00f2fe; /* Destello cian característico */
+    box-shadow: 2px 2px 0 #fe0979; /* Sombra magenta de marca */
+}
+
+/* Barra inferior de Copyright */
+.footer-derechos {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+/* ==========================================
+   PUNTOS INDICADORES DEL CARRUSEL (UI DOTS)
+   ========================================== */
+.carrusel-puntos {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Asegura que floten sobre el fondo verde */
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.punto:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+/* El círculo que representa la imagen que se está viendo en el momento */
+.punto.activo {
+    background-color: #f4d03f; /* Amarillo institucional Unicachi */
+    width: 25px; /* Efecto moderno alargado para el punto activo */
+    border-radius: 6px;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================== */
+
+/* 1. AJUSTES PARA TABLETS (Pantallas menores a 992px) */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Achicamos un poco el título principal */
+    }
+    
+    .stats-banner {
+        flex-wrap: wrap; /* Si no caben los pilares, se acomodan abajo */
+        gap: 20px;
+    }
+}
+
+/* 2. AJUSTES PARA CELULARES (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    
+    /* Barra de navegación adaptable */
+    .navbar {
+        flex-direction: column; /* El logo arriba y el menú abajo */
+        gap: 15px;
+        text-align: center;
+        padding: 15px 2%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .menu a {
+        margin-left: 0; /* Quitamos márgenes izquierdos estorbosos */
+        font-size: 0.9rem;
+    }
+
+    .btn-cta-nav {
+        padding: 8px 14px;
+    }
+
+    /* Sección Hero (Portada) */
+    .hero {
+        min-height: 500px; /* Reducimos la altura en pantallas táctiles */
+        padding: 0 5%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Título más cómodo para leer en smartphone */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    /* Sección Admisión (El formulario y el texto se apilan) */
+    .admision-contenedor {
+        flex-direction: column; /* Pone el formulario debajo del texto explicativo */
+        gap: 30px;
+    }
+    
+    .admision-info {
+        text-align: center;
+    }
+    
+    .admision-formulario {
+        width: 100%;
+        padding: 25px 20px;
+    }
+}
+/* ==========================================================================
+   ESTILOS FINALES PARA REDES SOCIALES (CENTRADOR ABSOLUTO EN CRUZ)
+   ========================================================================== */
+
+/* El círculo contenedor blanco */
+.red-social {
+    display: inline-block;            
+    width: 46px; 
+    height: 46px;
+    background-color: #ffffff; 
+    border-radius: 50%;
+    margin-left: 15px;         
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+    
+    /* TRUCO TÉCNICO: Usamos posicionamiento relativo para controlar el eje interno */
+    position: relative; 
+}
+
+/* El logotipo interno (Se elimina el desfase anterior y se centra de forma absoluta) */
+.img-red {
+    width: 38px;   /* Escalamos un poco más el logo para que llene casi todo el círculo */
+    height: 38px;
+    filter: none !important; 
+    transition: transform 0.3s ease; 
+    
+    /* SOLUCIÓN DEFINITIVA: Centrado absoluto al milímetro */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Clava la imagen exactamente en el centro del círculo blanco */
+}
+
+/* ==========================================
+   ANIMACIONES AL PASAR EL MOUSE (HOVER MECHANICS)
+   ========================================== */
+
+/* Cuando pasas el mouse: el círculo flota y CRECE de forma fluida */
+.red-social:hover {
+    /* Mantenemos el efecto de flotación hacia arriba */
+    transform: translateY(-5px); 
+}
+
+/* Al pasar el mouse por los logotipos, hacemos que la IMAGEN de adentro crezca un poco */
+.red-social:hover .img-red {
+    /* 'scale(1.15)' agranda el logo, y mantenemos el translate para que no pierda el centro */
+    transform: translate(-50%, -50%) scale(1.15); 
+}
+
+/* Brillo perimetral azul para Facebook */
+.fb:hover {
+    box-shadow: 0 0 14px #1877f2; 
+}
+
+/* Brillo perimetral fucsia para TikTok */
+.tt:hover {
+    box-shadow: 0 0 14px #fe0979; 
+}

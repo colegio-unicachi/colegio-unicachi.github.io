@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEP Ascension School Unicachi - Construye tu futuro</title>
+    <link rel="stylesheet" href="unicachi_moderno.css">
+	<link rel="stylesheet" href="https://cloudflare.com">
+	
+
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo-contenedor">
+            <!-- Si tienes la insignia guardada como "insignia.png", se cargará aquí automáticamente -->
+            <img src="insignia.png" alt="Insignia Unicachi" class="logo-insignia" onerror="this.style.display='none'">
+            <div class="logo-texto">Ascension School <span>Unicachi</span></div>
+        </div>
+        <nav class="menu">
+            <a href="#metodologia">Metodología</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#admision" class="btn-cta-nav">Matrícula Abierta</a>
+        </nav>
+    </header>
+
+         <!-- 2. SECCIÓN HERO (PORTADA IMPACTO CON CARRUSEL Y PUNTOS) -->
+    <section class="hero">
+        
+        <!-- Contenedor del Carrusel Animado (Rutas locales para evitar bloqueos) -->
+        <div class="carrusel-fondo">
+            <div class="slide activa" style="background-image:url('foto1.jpg');">
+			</div>
+            <div class="slide" style="background-image: url('foto2.jpg');"></div>
+            <div class="slide" style="background-image: url('foto3.jpg');"></div>
+			<div class="slide" style="background-image: url('foto4.jpg');"></div>
+        </div>
+
+        <!-- Contenido Superpuesto con los eslóganes oficiales -->
+        <div class="hero-textos">
+            <span class="tag">Admisión 2027</span>
+            <h1>Construye tu futuro con nosotros.</h1>
+            <p>Hasta el oso polar ya eligió su futuro. Formamos líderes con los pilares de Orden, Progreso y Excelencia.</p>
+            <a href="#admision" class="btn-principal">Iniciar Admisión</a>
+        </div>
+        
+        <!-- CÍRCULOS INDICADORES DEL CARRUSEL -->
+        <div class="carrusel-puntos">
+            <span class="punto activo" onclick="cambiarSlideManual(0)"></span>
+            <span class="punto" onclick="cambiarSlideManual(1)"></span>
+            <span class="punto" onclick="cambiarSlideManual(2)"></span>
+			 <span class="punto" onclick="cambiarSlideManual(3)"></span>
+        </div>
+        
+    </section>
+
+
+    <!-- 3. BANNER DE ESTADÍSTICAS (AHORA CONECTADO AL MENÚ) -->
+    <section id="resultados" class="stats-banner">
+        <div class="stat-item"><strong>ORDEN</strong> <p>Disciplina fundamental</p></div>
+        <div class="stat-item"><strong>PROGRESO</strong> <p>Evolución académica</p></div>
+        <div class="stat-item"><strong>EXCELENCIA</strong> <p>Nuestra gran meta</p></div>
+    </section>
+
+
+    <!-- 4. METODOLOGÍA (TARJETAS) -->
+    <section id="metodologia" class="seccion-pilares">
+        <h2>Nuestra propuesta educativa</h2>
+        <p class="subtitulo">Potenciamos las competencias para el mundo real de hoy.</p>
+        
+        <div class="grid-pilares">
+            <div class="tarjeta-pilar">
+                <div class="icono-bloque">🔬</div>
+                <h3>Ciencia y Cómputo</h3>
+                <p>Laboratorios especializados de maquetación web, robótica e informática vanguardista.</p>
+            </div>
+            <div class="tarjeta-pilar">
+                <div class="icono-bloque">🏆</div>
+                <h3>Liderazgo y Valores</h3>
+                <p>Desarrollamos el carácter competitivo, la empatía y la disciplina integral de nuestros alumnos.</p>
+            </div>
+            <div class="tarjeta-pilar">
+                <div class="icono-bloque">🧠</div>
+                <h3>Acompañamiento</h3>
+                <p>Un equipo psicopedagógico enfocado en el crecimiento emocional y seguridad de cada estudiante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN DE ADMISIÓN (FORMULARIO SPLIT) -->
+    <section id="admision" class="seccion-admision">
+        <div class="admision-contenedor">
+            <div class="admision-info">
+                <h2>Únete a la familia Unicachi</h2>
+                <p>Completa el formulario para reservar una asesoría personalizada sobre nuestro proceso de admisión, vacantes disponibles y malla escolar.</p>
+            </div>
+			
+    <div class="admision-formulario">
+    <!-- REEMPLAZA EL ENLACE DE ABAJO CON EL ENLACE QUE TE DIÓ FORMSPREE -->
+    <form action="https://formspree.io/f/xrppprok" method="POST" target="_blank">
+		
+		        <!-- CORRECCIÓN DE REDIRECCIÓN: Debe ir arriba y con el protocolo completo https:// -->
+        <input type="hidden" name="_next" value="https://facebook.com">
+		<input type="hidden" name="_captcha" value="false">
+
+        <input type="text" name="Nombre_Apoderado" placeholder="Nombre del apoderado" required>
+        <input type="email" name="Correo_Electronico" placeholder="Correo electrónico" required>
+        <input type="tel" name="Celular" placeholder="Número de celular" required>
+        
+        <select name="Nivel_Interes" required>
+            <option value="">Selecciona el nivel de interés</option>
+            <option value="Inicial">Educación Inicial</option>
+            <option value="Primaria">Educación Primaria</option>
+            <option value="Secundaria">Educación Secundaria</option>
+        </select>
+        
+        <!-- Redirección automática a Facebook tras enviar (Ajuste para Formspree) -->
+        <input type="hidden" name="_next" value="https://facebook.com">
+        
+        <button type="submit" class="btn-enviar">Solicitar Información</button>
+    </form>
+</div>
+
+
+        </div>
+    </section>
+
+	    <!-- 6. PIE DE PÁGINA (FOOTER CON CONTACTO REAL) -->
+    <footer class="pie-pagina">
+        <div class="footer-contenedor">
+            
+            <!-- Columna 1: Información General -->
+            <div class="footer-info">
+                <h3>IEP Ascension School Unicachi</h3>
+                <p>Construye tu futuro con nosotros. Formando líderes con los sólidos pilares de Orden, Progreso y Excelencia.</p>
+            </div>
+            
+            <!-- Columna 2: Datos de Contacto Reales (Garantizado sin Internet) -->
+            <div class="footer-contacto">
+                <h4>Contacto e Informes</h4>
+                <p class="dato-contacto"><span class="emoji-icono">📍</span> Av Algarrobos MZ E Parcela 4, Villa el Salvador, Peru, 15831</p>
+                <p class="dato-contacto"><span class="emoji-icono">📞</span> 977 851 254</p>
+                <p class="dato-contacto"><span class="emoji-icono">✉️</span> colegioprivadoasu2020@gmail.com</p>
+            </div>
+
+            
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-redes">
+                <h4>Síguenos en nuestras Redes Sociales</h4>
+                <div class="iconos-redes">
+                    <a href="https://facebook.com" target="_blank" class="red-social fb" title="Facebook Oficial">
+                        <img src="logo-fb.png" alt="Facebook" class="img-red">
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" class="red-social tt" title="TikTok Oficial">
+                        <img src="logo-tt.png" alt="TikTok" class="img-red">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="footer-derechos">
+            <p>&copy; 2026 IEP Ascension School Unicachi. Todos los derechos reservados. | Proyecto de Cómputo</p>
+        </div>
+    </footer>
+
+
+
+       
+
+    <!-- AUTOMATIZACIÓN COMPATIBLE CON CS6 + CONTROL DE PUNTOS -->
+    <script>
+        var diapositivas = document.querySelectorAll('.slide');
+        var puntos = document.querySelectorAll('.punto');
+        var indiceActual = 0;
+        var temporizador;
+
+        // Función principal para cambiar de imagen y actualizar los círculos
+        function cambiarSlide(nuevoIndice) {
+            // Quitamos la clase activa a la foto y punto actual
+            diapositivas[indiceActual].classList.remove('activa');
+            puntos[indiceActual].classList.remove('activo');
+            
+            // Actualizamos al nuevo índice
+            indiceActual = nuevoIndice;
+            
+            // Añadimos la clase activa a los nuevos elementos
+            diapositivas[indiceActual].classList.add('activa');
+            puntos[indiceActual].classList.add('activo');
+        }
+
+        // Función automática cada 5 segundos
+        function iniciarCarrusel() {
+            temporizador = setInterval(function() {
+                var siguienteIndice = (indiceActual + 1) % diapositivas.length;
+                cambiarSlide(siguienteIndice);
+            }, 5000);
+        }
+
+        // Permite hacer clic en los círculos para cambiar de foto manualmente
+        function cambiarSlideManual(indiceElegido) {
+            clearInterval(temporizador); // Detiene el avance automático momentáneamente
+            cambiarSlide(indiceElegido); // Cambia a la foto que clickeó el usuario
+            iniciarCarrusel();           // Reinicia el contador de 5 segundos
+        }
+
+        // Arrancamos el carrusel apenas carga la página
+        iniciarCarrusel();
+    </script>
+    <!-- AUTOMATIZACIÓN DEL CARRUSEL -->
+    <script>
+        const diapositivas = document.querySelectorAll('.slide');
+        let indiceActual = 0;
+
+        setInterval(() => {
+            diapositivas[indiceActual].classList.remove('activa');
+            indiceActual = (indiceActual + 1) % diapositivas.length;
+            diapositivas[indiceActual].classList.add('activa');
+        }, 5000);
+    </script>
+
+</body>
+</html>
